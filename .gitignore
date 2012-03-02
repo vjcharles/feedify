@@ -1,0 +1,9 @@
+.DS_Store
+*/*.swp
+*/*.swo
+*/*/rss_config.yml
+
+*.wav
+*.mp3
+*.png
+*.jpg

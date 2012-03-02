@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:media="http://search.yahoo.com/mrss/"
+>
+
+{{#channel}}
+  <channel>
+    <title>{{title}}</title>
+    <atom:link href="{{feed_url}}" rel="self" type="application/rss+xml" />
+    <link>{{site_url}}</link>
+    <description>{{description}}</description>
+    <lastBuildDate>{{lastBuildDate}}</lastBuildDate>
+    <language>{{language}}</language>
+    <sy:updatePeriod>{{sy_updatePeriod}}</sy:updatePeriod>
+    <sy:updateFrequency>{{sy_updateFrequency}}</sy:updateFrequency>
+    <generator>{{generator}}</generator>
+    <copyright>{{copyright}} {{this_year}}</copyright>
+    <managingEditor>{{managingEditor}}</managingEditor>
+    <webMaster>{{webMaster}}</webMaster>
+    <category>{{category}}</category>
+    <ttl>{{ttl}}</ttl>
+    {{#image}}
+      <image>
+        <url>{{url}}</url>
+        <title>{{title}}</title>
+        <link>{{link}}</link>
+        <width>{{width}}</width>
+        <height>{{height}}</height>
+      </image>
+    {{/image}}
+    <itunes:subtitle>{{itunes_subtitle}}</itunes:subtitle>
+    <itunes:summary>{{itunes_summary}}</itunes:summary>
+    <itunes:keywords>{{itunes_keywords}}</itunes:keywords>
+
+    {{#itunes_category}}
+      {{#sub_category}}
+        <itunes:category text="{{category}}">
+          <itunes:category text="{{sub_category}}"></itunes:category>
+        </itunes:category>
+      {{/sub_category}}
+      {{^sub_category}}
+        <itunes:category text="{{category}}"></itunes:category>
+      {{/sub_category}}
+    {{/itunes_category}}
+
+    <itunes:author>{{itunes_author}}</itunes:author>
+    {{#itunes_owner}}
+      <itunes:owner>
+        <itunes:name>{{itunes_name}}</itunes:name>
+        <itunes:email>{{itunes_email}}</itunes:email>
+      </itunes:owner>
+    {{/itunes_owner}}
+    <itunes:block>{{itunes_block}}</itunes:block>
+    <itunes:explicit>{{itunes_explicit}}</itunes:explicit>
+    <itunes:image href="{{itunes_image}}"></itunes:image>
+
+    {{#items}}
+      <item>
+        <title>{{title}}</title>
+        <link>{{link}}</link>
+        <comments>{{comments}}</comments>
+        <pubDate>{{pubDate}}</pubDate>
+        <dc:creator>{{dc_creator}}</dc:creator>
+        <category>{{category}}</category>
+        <guid isPermaLink="{{guid_isPermaLink}}">{{guid}}</guid>
+        <description>{{description}}</description>
+        <content:encoded>{{content_encoded}}</content:encoded>
+        <wfw:commentRss>{{wfw_commentRss}}</wfw:commentRss>
+        <slash:comments>{{slash_comments}}</slash:comments>
+        {{#enclosure}}
+          <enclosure url="{{url}}" length="{{file_size}}" type="{{type}}"></enclosure>
+        {{/enclosure}}
+        <itunes:duration>{{itunes_duration}}</itunes:duration>
+        <itunes:subtitle>{{itunes_subtitle}}</itunes:subtitle>
+        <itunes:summary>{{itunes_summary}}</itunes:summary>
+        <itunes:keywords>{{itunes_keywords}}</itunes:keywords>
+        <itunes:author>{{itunes_author}}</itunes:author>
+        <itunes:explicit>{{itunes_explicit}}</itunes:explicit>
+        <itunes:block>{{itunes_block}}</itunes:block>
+      </item>
+    {{/items}}
+  </channel>
+{{/channel}}
+</rss>
+

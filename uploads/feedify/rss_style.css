@@ -1,0 +1,29 @@
+/*
+ * put this just below xml version in xml.mustache file
+ * <?xml-stylesheet type="text/css" href="feedify/rss_style.css" ?>
+ */
+
+channel {
+  display: block;
+}
+
+channel > title {
+  font-size: 140%;
+  display: block;
+}
+
+channel link {
+  display: block;
+}
+
+channel description {
+  display: block;
+  font-size: 120%;
+}
+
+channel item {
+  margin: 10px;
+  background-color: gray;
+  display: block;
+}
+

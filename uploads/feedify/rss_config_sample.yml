@@ -1,0 +1,133 @@
+## RSS meta config
+##   This is the main configuration file for podcast content
+##   all fields here can be modified
+##   see http://www.apple.com/itunes/podcasts/specs.html for itune-specific fields
+##
+##   Configure this with your details and rename it to rss_config.yml
+##   see README for more details
+
+default_timezone: "America/Los_Angeles"
+template_channel_path: 'feedify/itunes_feed.xml.mustache'
+
+#default filetypes (itunes acceptable), .wav files allowed not itunes compatible
+filetypes_to_feedify:
+  - mp3
+  - m4a
+  - mp4
+  - m4v
+  - mov
+  - pdf
+  - epub
+  - wav
+
+#todo: not used in script yet
+#determine if item fields with same name as channel are to be used if not explicitly defined in item
+item_defaults_to_channel: true
+
+## podcast / feed
+channel:
+  ## customize me ##
+  title: ""
+  description: ""
+
+  #with full path of this site, with http
+  site_url: ""
+
+  # where is the xml.php file? It should be in the same directory as your audio files. Enter full-path
+  feed_url: ""
+  language: "en"
+  copyright: "copyright"
+  category: ""
+
+  # this is only seen in the iTunes store. Make sure this full url is visible in a browser as a test, I guess.
+  image:
+    # full path to your image
+    url: "default_image.jpg"
+    title: ""
+    link: ""
+    width: "144"
+    height: "144"
+  # optional, full url with a param stating the version of this software
+  generator: "http://vincentcharles.com/?rss_generator=feedify&v=0.1"
+
+  webMaster: "email@email.com (name)"
+  managingEditor: "email@email.com (name)"
+  itunes_author: ""
+  itunes_owner:
+    itunes_name: "w"
+    itunes_email: ""
+  # same image as before. todo: use the above here too.
+  itunes_image: "default_image.jpg"
+  itunes_subtitle: ""
+  itunes_summary: ""
+
+  #first 12 words are indexed by iTunes, comma separated
+  itunes_keywords: ""
+
+  #see http://www.apple.com/itunes/podcasts/specs.html#categories
+  #this list can be any size. only category and sub_category are supported
+  itunes_category:
+    - category: "Arts"
+      sub_category: "Performing Arts"
+    - category: "Health"
+      sub_category: "Self-Help"
+      sub_category: "Sexuality"
+  itunes_explicit: "no"
+  itunes_block: "no"
+
+  sy_updatePeriod: "hourly"
+  sy_updateFrequency: "1"
+  ttl: "1440"
+
+  #dynamic
+  #lastBuildDate: ""
+
+## item/episode defaults ##
+#  if your media files don't have this metadata, use the following.
+item:
+  title: ""
+  link: ""
+  # a full url to where comments are for this track (not applicable if only media are in this directory)
+  #  ex. http://some_url.com#comments
+  comments: ""
+  #same as author/creator/your-name. todo: use title from above
+  dc_creator: ""
+  category: "Uncategorized"
+
+  #dynamic
+  # needs to be unique
+  #guid: ""
+
+  #basically if true, I think you need to make sure to not change the media names
+  guid_isPermaLink: "true"
+
+  #can be same as description
+  content_encoded: ""
+  # I don't know how useful this is. ex. http://my_url.com/?feed=rss2"
+  wfw_commentRss: ""
+  slash_comments: "0"
+
+  # this is the media file...let it populate...
+  enclosure:
+    url: ""
+    file_size: ""
+    type: ""
+  itunes_duration: "00:01"
+
+  #defaults to channel itunes_subtitle and itunes_summary
+  itunes_subtitle: ""
+
+  #these next two currently are filled with the same info
+  itunes_summary: ""
+  description: ""
+
+  itunes_keywords: "Uncategorized"
+
+  #could be same as channel, see item_defaults_to_channel boolean flag above
+  itunes_author: ""
+
+  itunes_explicit: "no"
+  itunes_block: "no"
+
+  #generated
+  #pubDate: "Sun, 29 Jan 2012 00:15:35 +0000"
